@@ -11,4 +11,4 @@ import Foundation
 var jojoCondition: BodyCondition = BodyCondition(upperBodyStrengh: 50, lowerBodyStrengh: 50, muscularEndurance: 50, fatigue: 10)
 
 sitUp.action(jojoCondition)
-print(jojoCondition.upperBodyStrengh)
+jojoCondition.printCurrentBodyCondition()
