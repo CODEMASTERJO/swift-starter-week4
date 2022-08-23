@@ -13,32 +13,46 @@ struct Activity {
 }
 
 let sitUp: Activity = Activity(name: "윗몸일으키기", action: { (bodyCondition: BodyCondition) in
-    bodyCondition.upperBodyStrengh += Int.random(in: 10...20)
-    bodyCondition.fatigue += Int.random(in: 10...20)
+    print("<<\(sitUp.name)을(를) 시작합니다.>>")
+    bodyCondition.raiseUpperBodyStrength(Int.random(in: 10...20))
+    bodyCondition.raiseFatigue(Int.random(in: 10...20))
+    print("--------------")
+    bodyCondition.printCurrentBodyCondition()
 })
 
 let squat: Activity = Activity(name: "스쿼트", action: { (bodyCondition: BodyCondition) in
-    bodyCondition.lowerBodyStrengh += Int.random(in: 23...30)
-    bodyCondition.fatigue += Int.random(in: 10...20)
+    print("<<\(squat.name)을(를) 시작합니다.>>")
+    bodyCondition.raiseLowerBodyStrength(Int.random(in: 20...30))
+    bodyCondition.raiseFatigue(Int.random(in: 10...20))
+    print("--------------")
+    bodyCondition.printCurrentBodyCondition()
 })
 
 let longRunning: Activity = Activity(name: "오래달리기", action: { (bodyCondition: BodyCondition) in
-    bodyCondition.muscularEndurance += Int.random(in: 20...30)
-    bodyCondition.upperBodyStrengh += Int.random(in: 5...10)
-    bodyCondition.lowerBodyStrengh += Int.random(in: 5...10)
-    bodyCondition.fatigue += Int.random(in: 20...30)
+    print("<<\(longRunning.name)을(를) 시작합니다.>>")
+    bodyCondition.raiseMuscularEndurance(Int.random(in: 20...30))
+    bodyCondition.raiseUpperBodyStrength(Int.random(in: 5...10))
+    bodyCondition.raiseLowerBodyStrength(Int.random(in: 5...10))
+    bodyCondition.raiseFatigue(Int.random(in: 20...30))
+    print("--------------")
+    bodyCondition.printCurrentBodyCondition()
 })
 
 let dynamicRest: Activity = Activity(name: "동적휴식", action: { (bodyCondition: BodyCondition) in
-    if bodyCondition.fatigue > 10 {
-    bodyCondition.fatigue -= Int.random(in: 10...20)
-    } else {
+    print("<<\(dynamicRest.name)을(를) 시작합니다.>>")
+    bodyCondition.dropFatigue(Int.random(in: 5...10))
+    if bodyCondition.fatigue < 0 {
         bodyCondition.fatigue = 0
     }
+    print("--------------")
+    bodyCondition.printCurrentBodyCondition()
 })
 
 let jiuJitsu: Activity = Activity(name: "주짓수", action: { (bodyCondition: BodyCondition) in
-    bodyCondition.upperBodyStrengh += Int.random(in: 5...10)
-    bodyCondition.lowerBodyStrengh += Int.random(in: 5...10)
-    bodyCondition.fatigue += Int.random(in: 10...20)
+    print("<<\(jiuJitsu.name)을(를) 시작합니다.>>")
+    bodyCondition.raiseUpperBodyStrength(Int.random(in: 10...20))
+    bodyCondition.raiseLowerBodyStrength(Int.random(in: 10...20))
+    bodyCondition.raiseFatigue(Int.random(in: 10...20))
+    print("--------------")
+    bodyCondition.printCurrentBodyCondition()
 })

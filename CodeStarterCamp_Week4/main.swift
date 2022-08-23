@@ -8,7 +8,7 @@
 
 import Foundation
 
-var jojoCondition: BodyCondition = BodyCondition(upperBodyStrengh: 50, lowerBodyStrengh: 50, muscularEndurance: 50, fatigue: 10)
+var jojoCondition: BodyCondition = BodyCondition(upperBodyStrength: 100, lowerBodyStrength: 80, muscularEndurance: 70, fatigue: 20)
 
 sitUp.action(jojoCondition)
-jojoCondition.printCurrentBodyCondition()
+dynamicRest.action(jojoCondition)
