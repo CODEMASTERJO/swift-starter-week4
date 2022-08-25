@@ -41,9 +41,6 @@ let longRunning: Activity = Activity(name: "오래달리기", action: { (bodyCon
 let dynamicRest: Activity = Activity(name: "동적휴식", action: { (bodyCondition: BodyCondition) in
     print("<<\(dynamicRest.name)을(를) 시작합니다.>>")
     bodyCondition.dropFatigue(Int.random(in: 5...10))
-    if bodyCondition.fatigue < 0 {
-        bodyCondition.fatigue = 0
-    }
     print("--------------")
     bodyCondition.printCurrentBodyCondition()
 })

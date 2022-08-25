@@ -69,9 +69,8 @@ class BodyCondition {
     }
     
     func dropFatigue(_ fatigue: Int) {
-        if fatigue > 0 {
-            self.fatigue -= fatigue
-        } else {
+        self.fatigue -= fatigue
+        if self.fatigue < 0 {
             self.fatigue = 0
         }
     }
