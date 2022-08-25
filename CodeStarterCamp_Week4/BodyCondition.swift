@@ -27,8 +27,6 @@ class BodyCondition {
         didSet {
             if fatigue > oldValue {
                 print("피로도가 \(fatigue - oldValue) 상승합니다.")
-            } else {
-                print("피로도가 \(oldValue - fatigue) 하락합니다.")
             }
         }
     }
@@ -43,6 +41,7 @@ class BodyCondition {
         
     func printCurrentBodyCondition() {
         print("""
+        --------------
         현재의 컨디션은 다음과 같습니다.
         상체근력: \(upperBodyStrength)
         하체근력: \(lowerBodyStrength)
@@ -70,6 +69,10 @@ class BodyCondition {
     
     func dropFatigue(_ fatigue: Int) {
         self.fatigue -= fatigue
+        checkFatigueNagativeNumber(fatigue)
+    }
+    
+    func checkFatigueNagativeNumber(_ fatigue: Int) {
         if self.fatigue < 0 {
             self.fatigue = 0
         }
