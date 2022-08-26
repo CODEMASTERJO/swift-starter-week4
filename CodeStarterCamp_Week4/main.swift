@@ -8,5 +8,9 @@
 
 import Foundation
 
-print("Hello, World!")
+var jojoCondition: BodyCondition = BodyCondition(upperBodyStrength: 100, lowerBodyStrength: 80, muscularEndurance: 70, fatigue: 30)
 
+sitUp.action(jojoCondition)
+jojoCondition.printCurrentBodyCondition()
+dynamicRest.action(jojoCondition)
+jojoCondition.printCurrentBodyCondition()
